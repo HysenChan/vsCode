@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示
+            "type": "cppdbg", // 配置类型
+            "request": "launch", // 请求配置类型。可以是“启动”或“附加”
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe", // 将要进行调试的程序的路径
+            "args": [], // 程序调试时传递给程序的命令行参数，一般设为空即可
+            "stopAtEntry": false, // 设为true时程序将暂停在程序入口处，一般设置为false
+            "cwd": "${fileDirname}", // 调试程序时的工作目录，一般为${fileDirname}即代码所在目录
+            "environment": [], // 要添加到程序环境的环境变量。示例: [ { "name": "config", "value": "Debug" } ]，而不是 [ { "config": "Debug" } ]
+            "externalConsole": true, // 调试时是否显示控制台窗口
+            "MIMode": "gdb", // 指定 MIDebugEngine 要连接到的控制台调试程序。允许的值为 "gdb"、"lldb"。
+            "miDebuggerPath": "gdb.exe", // MiDebugger的路径，注意这里要与MinGw的路径对应，配置过环境变量可直接写成gdb.exe
+            "preLaunchTask": "Compile", // 该preLaunchTask设置用于指定要在启动前执行的任务。确保它与tasks.json文件label设置一致
+            "setupCommands": [
+                // 为了安装基础调试程序而执行的一个或多个 GDB/LLDB 命令
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

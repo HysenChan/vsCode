@@ -1,0 +1,14 @@
+E:\vsCode\cpp\Design\Factory\bin\Debug\net9.0\Factory.exe
+E:\vsCode\cpp\Design\Factory\bin\Debug\net9.0\Factory.deps.json
+E:\vsCode\cpp\Design\Factory\bin\Debug\net9.0\Factory.runtimeconfig.json
+E:\vsCode\cpp\Design\Factory\bin\Debug\net9.0\Factory.dll
+E:\vsCode\cpp\Design\Factory\bin\Debug\net9.0\Factory.pdb
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.GeneratedMSBuildEditorConfig.editorconfig
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.AssemblyInfoInputs.cache
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.AssemblyInfo.cs
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.csproj.CoreCompileInputs.cache
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.dll
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\refint\Factory.dll
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.pdb
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\Factory.genruntimeconfig.cache
+E:\vsCode\cpp\Design\Factory\obj\Debug\net9.0\ref\Factory.dll

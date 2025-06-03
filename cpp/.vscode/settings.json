@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.fontFamily": "Lucida Console",
+    "terminal.integrated.shellArgs.windows": [
+        "/K chcp 65001 >nul"
+    ],
+    // "code-runner.executorMap": {
+    //     "cpp": "chcp 65001 "
+    // },
+}
