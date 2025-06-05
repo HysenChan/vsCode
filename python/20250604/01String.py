@@ -142,3 +142,152 @@ Dijkstra: Computer science is no more about computers than astronomy is about te
 for line in quotes.splitlines():
     if line.startswith("Knuth"):
         print(line)
+
+
+def isPalindrome1(s):
+    return s == reverseString(s)
+
+
+def isPalindrome2(s):
+    for i in range(len(s) // 2):
+        if s[i] != s[-i - 1]:
+            return False
+    return True
+
+
+def isPalindrome3(s):
+    for i in range(len(s)):
+        if s[i] != s[-1 - i]:
+            return False
+    return True
+
+
+def isPalindrome4(s):
+    while len(s) > 1:
+        if s[0] != s[-1]:
+            return False
+        s = s[1:-1]
+    return True
+
+
+print(isPalindrome1("abcba"), isPalindrome1("abca"))
+print(isPalindrome2("abcba"), isPalindrome2("abca"))
+print(isPalindrome3("abcba"), isPalindrome3("abca"))
+print(isPalindrome4("abcba"), isPalindrome4("abca"))
+
+s = "abcde"
+s = s[:2] + "z" + s[3:]
+print(s)
+
+# name = input("Enter your name:")
+# print("Hi," + name + ".Your name has " + str(len(name)) + " letters.")
+
+print(ord("A"))
+print(chr(65))
+print(chr(ord("A") + 1))
+
+s = "(3**2+4**2)**0.5"
+print(eval(s))
+
+
+def reformatMyHardDrive():
+    print("This is reformatMyHardDrive!")
+
+
+s = "reformatMyHardDrive()"
+print(eval(s))
+
+
+def p(test):
+    print("True " if test else "False ", end="")
+
+
+def printRow(s):
+    print(" " + s + " ", end="")
+    p(s.isalnum())
+    p(s.isalpha())
+    p(s.isdigit())
+    p(s.islower())
+    p(s.isspace())
+    p(s.isupper())
+    print()
+
+
+def printTable():
+    print(" s isalnum isalpha isdigit islower isupper")
+    for s in "ABCD,ABcd,abcd,ab12,1234, ,AB?!".split(","):
+        printRow(s)
+
+
+printTable()
+
+print("This is nice. Yes!".lower())
+print("So is this? Sure!!".upper())
+print("   Strip removes leading and trailing whitespace only    ".strip())
+print("This is nice.  Really nice.".replace("nice", "sweet"))
+print("This is nice.  Really nice.".replace("nice", "sweet", 1))  # count = 1
+
+print("----------------")
+s = "This is so so fun!"
+t = s.replace("so ", "")
+print(t)
+print(s)  # note that s is unmodified (strings are immutable!)
+
+print("This is a history test".count("is"))  # 3
+print("This IS a history test".count("is"))  # 2
+print("-------")
+print("Dogs and cats!".startswith("Do"))  # True
+print("Dogs and cats!".startswith("Don't"))  # False
+print("-------")
+print("Dogs and cats!".endswith("!"))  # True
+print("Dogs and cats!".endswith("rats!"))  # False
+print("-------")
+print("Dogs and cats!".find("and"))  # 5
+print("Dogs and cats!".find("or"))  # -1
+print("-------")
+print("Dogs and cats!".index("and"))  # 5
+# print("Dogs and cats!".index("or"))  # crash!
+
+breed = "beagle"
+print("Did you see a %s?" % breed)
+
+dogs = 42
+print("There are %d dogs." % dogs)
+
+grade = 97.392
+print("your current grade is %f" % grade)
+
+grade = 97.392
+print("your current grade is %.1f" % grade)
+
+dogs = 42
+cats = 18
+exclamation = "Wow"
+print("There are %d dogs and %d cats. %s!" % (dogs, cats, exclamation))
+
+dogs = 42
+cats = 3
+print("%10s %10s" % ("dogs", "cats"))
+print("%10d %10d" % (dogs, cats))
+
+
+def readFile(path):
+    with open(path, "r") as f:
+        return f.read()
+
+
+def writeFile(path, contents):
+    with open(path, "w") as f:
+        f.write(contents)
+
+
+contentsToWrite = "This is a test!\nIt is only a test."
+writeFile("20250604/foo.txt", contentsToWrite)
+
+contentsRead = readFile("20250604/foo.txt")
+assert contentsRead == contentsToWrite
+
+print("Open the file foo.txt and verify its contents.")
+
+helloRead = readFile("20250604/hello.txt")
+print(helloRead)
