@@ -102,3 +102,129 @@ def testMostFrequentLetters():
 
 
 testMostFrequentLetters()
+
+
+def hasBalancedParentheses(s):
+    total = 0
+    for i in range(len(s)):
+        if s[i] == "(":
+            total += 1
+        elif s[i] == ")":
+            total -= 1
+        if total < 0:
+            return False
+    return total == 0
+
+
+def testHasBalancedParentheses():
+    print("Testing hasBalancedParentheses()...", end="")
+    assert hasBalancedParentheses("()") == True
+    assert hasBalancedParentheses("") == True
+    assert hasBalancedParentheses("())") == False
+    assert hasBalancedParentheses("()(") == False
+    assert hasBalancedParentheses(")(") == False
+    assert hasBalancedParentheses("(()())") == True
+    assert hasBalancedParentheses("((()())(()(()())))") == True
+    assert hasBalancedParentheses("((()())(()((()())))") == False
+    assert hasBalancedParentheses("((()())(((()())))") == False
+    print("Passed!")
+
+
+testHasBalancedParentheses()
+
+import string
+
+
+def areAnagrams(s1, s2):
+    if len(s1) != len(s2):
+        return False
+
+    s1_lower = s1.lower()
+    s2_lower = s2.lower()
+
+    for char in string.ascii_lowercase:
+        if s1_lower.count(char) != s2_lower.count(char):
+            return False
+
+    return True
+
+
+def testAreAnagrams():
+    print("Testing areAnagrams()...", end="")
+    assert areAnagrams("", "") == True
+    assert areAnagrams("abCdabCd", "abcdabcd") == True
+    assert areAnagrams("abcdaBcD", "AAbbcddc") == True
+    assert areAnagrams("abcdaabcd", "aabbcddcb") == False
+    print("Passed!")
+
+
+testAreAnagrams()
+
+
+def rotateStringLeft(s, k):
+    n = len(s)
+    if n == 0:
+        return s
+    k = k % n
+
+    if k == 0:  # 如果k为0，则不需要旋转
+        return s
+
+    lst = list(s)
+
+    def reverse(l, left, right):
+        while left < right:
+            l[left], l[right] = l[right], l[left]
+            left += 1
+            right -= 1
+
+    reverse(lst, 0, k - 1)
+    reverse(lst, k, n - 1)
+    reverse(lst, 0, n - 1)
+    return "".join(lst)
+
+    # return "".join(s[(i + k) % n] for i in range(n))
+
+
+def testRotateStringLeft():
+    print("Testing rotateStringLeft()...", end="")
+    assert rotateStringLeft("abcde", 0) == "abcde"
+    assert rotateStringLeft("abcde", 1) == "bcdea"
+    assert rotateStringLeft("abcde", 2) == "cdeab"
+    assert rotateStringLeft("abcde", 3) == "deabc"
+    assert rotateStringLeft("abcde", 4) == "eabcd"
+    assert rotateStringLeft("abcde", 5) == "abcde"
+    assert rotateStringLeft("abcde", 25) == "abcde"
+    assert rotateStringLeft("abcde", 28) == "deabc"
+    print("Passed!")
+
+
+testRotateStringLeft()
+
+
+def collapseWhitespace(s):
+    result = []
+    in_whitespace = False
+
+    for char in s:
+        print(char, char.isspace())
+        if char.isspace():
+            if not in_whitespace:
+                result.append(" ")
+                in_whitespace = True
+        else:
+            result.append(char)
+            in_whitespace = False
+
+    return "".join(result)
+
+
+def testCollapseWhitespace():
+    print("Testing collapseWhitespace()...", end="")
+    assert collapseWhitespace("a\n\n\nb") == "a b"
+    assert collapseWhitespace("a\n   \t    b") == "a b"
+    assert collapseWhitespace("a\n   \t    b  \n\n  \t\t\t c   ") == "a b c "
+    print("Passed!")
+
+
+testCollapseWhitespace()
